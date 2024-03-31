@@ -79,6 +79,30 @@ class kendaraan{
         cekPenumpang();
     }
 
+    public void penumpangNaik(int naik) {
+        System.out.println("ada penumpang mau naik: " + naik);
+        int current = this.jumlahPenumpang;
+        if (current + naik > this.maxPenumpang) {
+            System.out.println("maaf penumpang melebihi kapasitas");
+        } else {
+            this.jumlahPenumpang += naik;
+            System.out.println("penumpang berhasil naik");
+        }
+        cekPenumpang();
+    }
+
+    public void penumpangTurun(int turun) {
+        System.out.println("ada penumpang mau turun: " + turun);
+        int current = this.jumlahPenumpang;
+        if (current - turun < 0) {
+            System.out.println("maaf penumpang ghoib yang turun");
+        } else {
+            this.jumlahPenumpang -= turun;
+            System.out.println("penumpang berhasil turun");
+        }
+        cekPenumpang();
+    }
+
     public void maju(){
         System.out.println(this.merk + " " + this.platNomor +" Maju");
     }
